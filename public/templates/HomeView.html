@@ -1,0 +1,70 @@
+
+<div class="colsm-12">
+    <img src="../images/AVClogo_web.png" style="margin-bottom:40px;">
+</div>
+<div class="col-sm-5 col-sm-offset-1 text-center">
+    <p>To create an invoice, select a date range you would like to invoice. </br>   
+    The uninvoiced time entries will appear below. </br> </br> Press 'create invoices' to create an invoice for each project shown.</p>
+</div>
+<div class="col-sm-12">
+<form class="form-horizontal form-time" style="margin-top: 40px;" method="GET">  
+    <div class="form-group">
+        <label for="time-start-date" class="col-sm-2 control-label">Start Date</label>
+        <div class="col-sm-4">
+        <input type="text" class="form-control" id="time-start-date" required>
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label for="time-end-date" class="col-sm-2 control-label">End Date</label>
+        <div class="col-sm-4">
+        <input type="text" class="form-control" id="time-end-date" required>
+        </div>
+    </div>
+    <div class="form-group col-sm-6">
+        <span class="pull-right">
+            <button type="button" class="btn btn-default">Cancel</button>
+            <button type="button" class="btn btn-primary get-entries">Find times</button>
+        </span>    
+    </div>   
+</form>
+</div>
+<div id="time-list">
+<% if(projects && !_.isEmpty(projects)){ %>
+
+    <table class="table table-hover">
+        <thead>
+            <th>Project</th>
+            <th>Total hours to invoice</th>
+            <th>Total amount to invoice</th>
+        </thead>
+<%  //This loop goes through the projects and adds up the time from each entry
+    //and sets it to the var project_hours
+
+     _.each(projects, function(project){ 
+        var project_hours = 0;
+        _.each(project.timeEntries, function(entry){
+            project_hours += entry.day_entry.hours;
+        });
+ %>
+        <tr>  
+            <td><%=project.project_name%> - <%=project.project_code%></td> 
+            <td><%=accounting.formatNumber(project_hours, 2)%></td> 
+            <td><%=accounting.formatMoney((project_hours*99))%></td> 
+        </tr>
+
+<% }); %> 
+</table>
+<button class="btn btn-primary create-invoices">Create invoices</button>
+<% }else if(projects && _.isEmpty(projects)){ %> 
+        <div class="col-sm-6 alert alert-info text-center messages">There are no uninvoiced time entries for this date range.</div>
+<% } %>
+
+</div>
+<div class="col-sm-4 col-sm-offset-2 alert alert-success text-center hidden">Invoice(s) created successfully.</div>
+<script type="text/javascript">
+    $(function () {
+      $('#time-start-date').datetimepicker({ format: 'YYYY-MM-DD'});
+      $('#time-end-date').datetimepicker({ format: 'YYYY-MM-DD'});
+    });
+</script>

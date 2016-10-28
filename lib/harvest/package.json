@@ -1,0 +1,90 @@
+{
+  "_args": [
+    [
+      "harvest",
+      "C:\\Users\\Leo\\Documents\\dev\\inv-tester"
+    ]
+  ],
+  "_from": "harvest@*",
+  "_id": "harvest@0.1.5",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/harvest",
+  "_nodeVersion": "6.2.1",
+  "_npmOperationalInternal": {
+    "host": "packages-16-east.internal.npmjs.com",
+    "tmp": "tmp/harvest-0.1.5.tgz_1465733556166_0.22542863758280873"
+  },
+  "_npmUser": {
+    "email": "giacomo.trezzi@pingsrl.it",
+    "name": "g3z"
+  },
+  "_npmVersion": "3.9.3",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "harvest",
+    "raw": "harvest",
+    "rawSpec": "",
+    "scope": null,
+    "spec": "*",
+    "type": "range"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/harvest/-/harvest-0.1.5.tgz",
+  "_shasum": "0c79ad1e7a1e636d08b605ca33bbf083ff2b8343",
+  "_shrinkwrap": null,
+  "_spec": "harvest",
+  "_where": "C:\\Users\\Leo\\Documents\\dev\\inv-tester",
+  "author": {
+    "name": "Paul English"
+  },
+  "bugs": {
+    "url": "https://github.com/log0ymxm/node-harvest/issues"
+  },
+  "dependencies": {
+    "async": "^1.5.0",
+    "day-of-year": "^0.1.0",
+    "request": "~2.55.0",
+    "restler": "~3.2.2"
+  },
+  "description": "Harvest API client library",
+  "devDependencies": {
+    "config": "~1.13.0",
+    "coveralls": "^2.11.2",
+    "istanbul": "^0.3.14",
+    "mocha": "~2.2.5",
+    "mocha-lcov-reporter": "0.0.2"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "0c79ad1e7a1e636d08b605ca33bbf083ff2b8343",
+    "tarball": "https://registry.npmjs.org/harvest/-/harvest-0.1.5.tgz"
+  },
+  "gitHead": "ea03eb2231ce742236e2ca3833abe85315c0871a",
+  "homepage": "https://github.com/log0ymxm/node-harvest#readme",
+  "license": "MIT",
+  "main": "index.js",
+  "maintainers": [
+    {
+      "name": "g3z",
+      "email": "giacomo.trezzi@pingsrl.it"
+    },
+    {
+      "name": "nrub",
+      "email": "paul@onfrst.com"
+    }
+  ],
+  "name": "harvest",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/log0ymxm/node-harvest.git"
+  },
+  "scripts": {
+    "test": "mocha --no-timeouts"
+  },
+  "version": "0.1.5"
+}

@@ -1,0 +1,5 @@
+node_modules/
+public/node_modules/
+app/config/config.js
+knexfile.js
+.vscode
